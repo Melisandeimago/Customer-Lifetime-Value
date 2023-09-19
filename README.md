@@ -1,2 +1,11 @@
-# Customer-Lifetime-Value
-Learning to conduct the Customer Lifetime Value (CLV) analysis 
+# Customer Lifetime Value
+
+[✨ My Customer Lifetime Value (CLV) Project](https://docs.google.com/spreadsheets/d/1u1toESKmEQ2C-Y13JR_4hIiY6RaewdjTqgLyWCTHGCI/edit?usp=sharing)
+
+### Task description
+- You got a follow up task from your manager as he read some article that calculating CLV using Shopify’s formula is too simplistic. He has heard somewhere that using cohorts produces more reliable and actionable results. Once again please use turing_data_analytics.raw_events table to answer follow up questions from your manager.
+- TIP: imagine that current week is 2021-01-24 (the last weekly cohort you have in your dataset).
+- As the first step you should write 1 or 2 queries to pull data of weekly revenue divided by registrations. Since in this particular site there is no concept of registration, we will simply use the first visit to our website as registration date (registration cohort). Do not forget to use `user_pseudo_id` to distinguish between users. Then divide revenue in consequent weeks by the number of weekly registration numbers.
+- Next you will produce the same chart, but the revenue / registrations for a particular week cohort will be expressed as a cumulative sum. For this you simply need to add previous week revenue to current week’s revenue. Down below you will calculate averages for all week numbers (weeks since registration).
+- Next, we will focus on the future and try to predict the missing data. In this case missing data is the revenue we should expect from later acquired user cohorts. For example, for users whose first session happened on 2021-01-24 week we have only their first week revenue which is 0.19USD per user who started their first session in this week. Though we are not sure what will happen in the next 12 weeks.
+- For this we will simply use previously calculated Cumulative growth % (red marked area in chart aboove) and predict all 12 future weeks values (ex. for this cohort we can calculate expected revenue for week 1 as 0.19USD x (1 + 23.29%) = 0.24USD, for week 2 as 0.24USD x (1 + 12.26%) = 0.27USD). Using Avg. cumulative growth for each week we can calculate that based on 0.19USD initial value we can expect 0.35USD as revenue on week 12. Provide a chart which calculates these numbers for all future weeks (up till week 12).
